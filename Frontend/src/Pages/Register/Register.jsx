@@ -39,6 +39,8 @@ const Register = () => {
     bio: "",
     projects: [],
   });
+
+  console.log("Form: ", form);
   const [skillsProficientAt, setSkillsProficientAt] = useState("Select some skill");
   const [skillsToLearn, setSkillsToLearn] = useState("Select some skill");
   const [techStack, setTechStack] = useState([]);
@@ -391,7 +393,7 @@ const Register = () => {
     if (check1 && check2 && check3) {
       setSaveLoading(true);
       try {
-        const { data } = await axios.post("/user/registerUser", form);
+        const { data } = await axios.post("http://localhost:8000/user/registerUser", form);
         toast.success("Registration Successful");
         console.log("Data: ", data.data);
         navigate("/discover");

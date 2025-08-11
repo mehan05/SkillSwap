@@ -27,7 +27,7 @@ ARG CLOUDINARY_API_SECRET
 ARG GOOGLE_CLIENT_ID
 ARG GOOGLE_CLIENT_SECRET
 ARG GOOGLE_CALLBACK_URL
-ARG JWT_SECRET
+ARG SESSION_SECRET
 
 
 #write the environment variables to a .env file
@@ -40,7 +40,7 @@ RUN echo "PORT=${PORT}" > .env \
     && echo "GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}" >> .env \
     && echo "GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}" >> .env \
     && echo "GOOGLE_CALLBACK_URL=${GOOGLE_CALLBACK_URL}" >> .env \
-    && echo "JWT_SECRET=${JWT_SECRET}" >> .env
+    && echo "SESSION_SECRET=${SESSION_SECRET}" >> .env
 
 RUN cat .env
 

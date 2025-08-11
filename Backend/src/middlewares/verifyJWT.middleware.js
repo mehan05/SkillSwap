@@ -18,7 +18,7 @@ const verifyJWT_email = asyncHandler(async (req, res, next) => {
 
     // console.log("Token Found : ", token);
 
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    const decodedToken = jwt.verify(token, process.env.SESSION_SECRET);
     // console.log("Decoded Token is : ", decodedToken);
     const user = await UnRegisteredUser.findOne({ email: decodedToken?.email }).select(
       "-_id -__v -createdAt -updatedAt"
@@ -52,7 +52,7 @@ const verifyJWT_username = asyncHandler(async (req, res, next) => {
 
     // console.log("Token Found : ", token);
 
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    const decodedToken = jwt.verify(token, process.env.SESSION_SECRET);
     // console.log("Decoded Token is : ", decodedToken);
     const user = await User.findOne({ username: decodedToken?.username }).select("-__v -createdAt -updatedAt");
     if (!user) {

@@ -8,7 +8,7 @@ In today's fast-paced world, the acquisition of new skills is essential for pers
 
 ## Features
 
-- `Peers' Connection`:  chat interface enable direct communication after connecting request and acceptance and hands-on guidance.
+- `Peers' Connection`: chat interface enable direct communication after connecting request and acceptance and hands-on guidance.
 - `Industrial Security Features`: Utilizes Google OAuth 2.0 authentication and JSON Web Tokens (JWT) verification for database security.
 - `Rating and Feedback System`: Users can rate and give feedback on guidance sessions, enhancing credibility and accountability.
 - `Responsive Layout`: Ensures optimal usability across various devices for an enhanced learning experience.
@@ -80,11 +80,11 @@ CLOUDINARY_CLOUD_NAME = <your-cloudinary-cloud-name>
 CLOUDINARY_API_KEY = <your-cloudinary-api-key>
 CLOUDINARY_API_SECRET = <your-cloudinary-api-key>
 
-GOOGLE_CLIENT_ID = <your-google-client-id> 
+GOOGLE_CLIENT_ID = <your-google-client-id>
 GOOGLE_CLIENT_SECRET = <your-google-client-secret>
 GOOGLE_CALLBACK_URL=http://localhost:8000/auth/google/callback
 
-JWT_SECRET = <your-jwt-secret>
+SESSION_SECRET = <your-jwt-secret>
 
 EMAIL_ID = <your-email-id>
 APP_PASSWORD = <your-app-password>
@@ -120,7 +120,7 @@ services:
         GOOGLE_CLIENT_ID: "<your-google-client-id>"
         GOOGLE_CLIENT_SECRET: "<your-google-client-secret>"
         GOOGLE_CALLBACK_URL: "http://localhost:8000/auth/google/callback"
-        JWT_SECRET: "<your-jwt-secret>"
+        SESSION_SECRET: "<your-jwt-secret>"
     ports:
       - "8000:8000"
 
